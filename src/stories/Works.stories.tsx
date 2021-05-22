@@ -1,19 +1,16 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import TestComponent, { Props } from '../TestComponent';
+import GoodComponent, { Props } from '../GoodComponent';
 
 export default {
   title: 'Works',
-  component: TestComponent,
-  argTypes: {
-    onClickFoo: { action: 'clicked' },
-  },
+  component: GoodComponent,
 } as Meta;
 
-const Template: Story<Props> = (args) => <TestComponent {...args} />;
+const Template: Story<Props> = (args) => <GoodComponent {...args} />;
 
 export const Base = Template.bind({});
 Base.args = {
-  // onClickFoo: () => console.log('Hello'), // Buggy if uncommented
+  size: 'large',
 };

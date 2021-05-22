@@ -1,19 +1,16 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import TestComponent, { Props } from '../TestComponent';
+import BuggyComponent, { Props, Size } from '../BuggyComponent';
 
 export default {
   title: 'Buggy',
-  parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' }, // Still buggy after commented out and relying on preview.js
-  },
-  component: TestComponent,
+  component: BuggyComponent,
 } as Meta;
 
-const Template: Story<Props> = (args) => <TestComponent {...args} />;
+const Template: Story<Props> = (args) => <BuggyComponent {...args} />;
 
 export const Base = Template.bind({});
 Base.args = {
-  onClickFoo: () => console.log('Hello'), // Still buggy after commented out
+  size: Size.Large,
 };
