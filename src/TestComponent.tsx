@@ -4,7 +4,7 @@ export interface Props {
   onClickFoo: () => void;
 }
 
-const TestComponent: (props: Props) => JSX.Element = (props) => {
+const TestComponent = (props: Props): JSX.Element => {
   return (
     <div>
       <div onClick={props.onClickFoo}>Test Button</div>
